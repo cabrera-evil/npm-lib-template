@@ -1,0 +1,10 @@
+services:
+  backend:
+    image: cabreraevil/npm-lib-template
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: npm-lib-template
+    restart: no
+    environment:
+      - NODE_ENV=production

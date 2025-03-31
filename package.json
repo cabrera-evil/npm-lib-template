@@ -29,9 +29,9 @@
   ],
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "tsc --project tsconfig.build.json && tsc-alias",
+    "build": "tsc --project tsconfig.build.json && tsc-alias --project tsconfig.build.json",
     "dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/index",
-    "start": "ts-node -r tsconfig-paths/register dist/index",
+    "start": "ts-node -r tsconfig-paths/register src/index",
     "lint": "eslint --fix .",
     "lint:check": "eslint .",
     "lint:fix": "pnpm lint && pnpm format",
