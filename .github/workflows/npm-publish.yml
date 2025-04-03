@@ -14,7 +14,7 @@ jobs:
       push_before_sha: ${{ github.event.before }}
       push_base_sha: ${{ github.event.base_ref }}
       pull_base_sha: ${{ github.event.pull_request.base.sha }}
-      gitguardian_api_key_ref: op://actions/GitGuardian/credential
+      gitguardian_api_key_ref: op://devops/GitGuardian/credential
     secrets: inherit
 
   publish:
@@ -22,5 +22,5 @@ jobs:
     needs: [analyze]
     uses: cabrera-evil/workflows/.github/workflows/publish-npm.yaml@master
     with:
-      npm_token_ref: op://actions/NPM/credential
+      npm_token_ref: op://devops/NPM/credential
     secrets: inherit
