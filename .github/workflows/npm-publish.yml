@@ -6,6 +6,11 @@ on:
   release:
     types: [published]
 
+permissions:
+  security-events: write
+  actions: read
+  contents: read
+
 jobs:
   analyze_code:
     name: Analyze
