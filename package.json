@@ -1,7 +1,7 @@
 {
   "name": "npm-lib-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "A template for creating npm libraries with TypeScript, Jest, ESLint, Prettier, and Husky.",
   "files": [
     "dist"
   ],
@@ -19,12 +19,12 @@
   "license": "MIT",
   "author": {
     "name": "cabrera-evil",
-    "email": "douglascabrera.dev@gmail.com"
+    "email": "info@cabrera-dev.com"
   },
   "maintainers": [
     {
       "name": "cabrera-evil",
-      "email": "douglascabrera.dev@gmail.com"
+      "email": "info@cabrera-dev.com"
     }
   ],
   "scripts": {
@@ -53,6 +53,8 @@
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.18.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.9.0",
     "eslint": "^9.18.0",
@@ -65,6 +67,8 @@
     "prettier": "^3.3.3",
     "prettier-plugin-organize-imports": "^4.1.0",
     "rimraf": "^6.0.1",
+    "semantic-release": "^24.2.5",
+    "semantic-release-export-data": "^1.1.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
@@ -74,6 +78,7 @@
     "typescript-eslint": "^8.19.1"
   },
   "engines": {
-    "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
-  }
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@10.6.1"
 }

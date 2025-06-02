@@ -1,15 +1,22 @@
-name: NPM Publish
+name: Semantic Release
 description: |
-  This workflow is triggered when a new release is published. It runs code analysis and dependency analysis, and if everything is fine, it publishes the package to npm.
+  Automated release process using Semantic Release
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - master
+      - develop
+  workflow_dispatch:
 
 permissions:
-  security-events: write
   actions: read
-  contents: read
+  contents: write
+  id-token: write
+  issues: write
+  packages: write
+  pull-requests: write
+  security-events: write
 
 jobs:
   analyze_code:
@@ -23,14 +30,13 @@ jobs:
 
   analyze_deps:
     name: Analyze
-    needs: [set_environment]
     uses: cabrera-evil/workflows/.github/workflows/deps-analysis.yaml@master
     with:
       report: true
     secrets: inherit
 
-  publish:
-    name: Publish
+  release:
+    name: Release
     needs: [analyze_code, analyze_deps]
-    uses: cabrera-evil/workflows/.github/workflows/publish-npm.yaml@master
+    uses: cabrera-evil/workflows/.github/workflows/semantic-release.yaml@master
     secrets: inherit
